@@ -1,0 +1,54 @@
+$parrafos: 18px;
+$titulos: 40px;
+$padding: 30px;
+$margin: 30px;
+$ancho:700px;
+$alto:400px;
+
+h1{
+	font-size:$titulos;
+}
+
+p{
+	font-size:$parrafos;
+}
+
+.secundario{
+	width:50%*2;
+}
+
+.secundario__informacion{
+	width:$ancho + 340px;
+}
+
+
+
+$responsive:desktop;
+
+@if $responsive == desktop {
+	@media only screen and (max-width: 1024px){
+		.secundario__informacion{
+			width:$ancho + 120px;
+		}
+
+	}
+	}@else if $responsive == tablet {
+		@media only screen and (min-width: 768px){
+			.secundario__informacion{
+				width:$ancho - 50px;
+			}
+		}
+	}
+	@else if $responsive == mobile {
+		@media only screen and (max-width: 425px){
+			.secundario__informacion{
+				width:$ancho - 150px;
+			}
+		}
+	}
+
+	@else{
+		.secundario__informacion{
+			width:$ancho + 40px;
+		}
+	}

@@ -1,0 +1,68 @@
+@import "colores";
+@import "tamanos";
+@import "caracteristicas";
+
+
+
+
+.menu {
+	li{
+	font-size:$parrafos;
+	}
+	li a{
+	display:inline;
+	padding-left:$padding;
+	padding-right:$padding;
+	text-decoration: none;
+	}
+
+	li a:hover{
+	color:$negro;
+	font-weight:900;
+	}
+
+	li{
+	list-style:none;
+	}
+}
+
+.contenedor--informacion{
+	display:$contenedoris;
+	grid-template-rows: 200px 200px;
+    grid-template-columns: 50% 50%;
+    grid-column-gap: 10px;
+    padding-left:$padding;
+    p{
+        font-style: italic;
+    }
+}
+
+.box--trabajos{
+	display:$contenedoris;
+	grid-template-rows: 200px 200px;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 10px;
+    padding-left:$padding;
+}
+
+.container--footer{
+	padding:$padding;
+	ul li{
+	display:inline;
+	text-decoration:none;
+	}
+}
+
+.principal{
+	height:$alto;
+	align-items: center;
+}
+
+.secundario__parrafo{
+	border:1px solid $amarillo;
+}
+
+.secundario__parrafo--extended{
+	@extend .secundario__parrafo;
+	border-width:3px ;
+}
