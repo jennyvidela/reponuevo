@@ -3,13 +3,7 @@ $contendor: row;
 $contenedoris: grid;
 
 
-.menu{
-	display:$ubicacion;
-	flex-direction: $contendor;
-    justify-content: flex-end;
-    align-items: baseline;
 
-}
 
 .contenedor--informacion{
 	display: $contenedoris;
@@ -19,5 +13,13 @@ $contenedoris: grid;
 	display:$ubicacion;
 }
 
+.formularioDeContacto{
+	display: $contenedoris;
+	justify-content: space-around
+}
+
+#grid--aplicando{
+	display:$contenedoris;
+}
 
 

@@ -1,12 +1,18 @@
-$parrafos: 18px;
-$titulos: 40px;
+$parrafos: 22px;
+$titulos: 60px;
 $padding: 30px;
 $margin: 30px;
 $ancho:700px;
 $alto:400px;
+$imagenes:400px;
+$personas:600px;
+
+
 
 h1{
 	font-size:$titulos;
+	text-align: center;
+	font-weight: 300;
 }
 
 p{
@@ -52,3 +58,5 @@ $responsive:desktop;
 			width:$ancho + 40px;
 		}
 	}
+
+

@@ -4,37 +4,72 @@
 
 
 
-
-.menu {
-	li{
-	font-size:$parrafos;
-	}
-	li a{
-	display:inline;
-	padding-left:$padding;
-	padding-right:$padding;
-	text-decoration: none;
-	}
-
-	li a:hover{
-	color:$negro;
-	font-weight:900;
-	}
-
-	li{
-	list-style:none;
-	}
+body{
+	font-family: 'Roboto', sans-serif;
 }
+	/*comienzan estilos del menu*/	
+
+header{
+	background-color: white;
+	box-shadow: 1px 10px 28px -7px rgba(0,0,0,0.35);
+	-webkit-box-shadow: 1px 10px 28px -7px rgba(0,0,0,0.35);
+	-moz-box-shadow: 1px 10px 28px -7px rgba(0,0,0,0.35);
+	padding-left: $padding - 15px;
+	padding-right: $padding - 15px;
+}
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+}
+
+
+.container--nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav li {
+	margin-left: 2em;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  font-weight: 900;
+}
+
+
+
+
+/*finalizan estilos del menu*/
 
 .contenedor--informacion{
 	display:$contenedoris;
 	grid-template-rows: 200px 200px;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 100%;
     grid-column-gap: 10px;
     padding-left:$padding;
-    p{
-        font-style: italic;
+    text-align: center;
+
+    .contenedor__titulo{
+    	color: white;
     }
+    .contenedor__articulo{
+		h1{
+		color: white;
+
+		}
+	}
+	.contenedor__parrafo{
+		color: white;
+	}
+   
 }
 
 .box--trabajos{
@@ -43,6 +78,21 @@
     grid-template-columns: 25% 25% 25% 25%;
     grid-column-gap: 10px;
     padding-left:$padding;
+
+    img{
+    	width:$imagenes;
+    }
+    .box__texto, .box__texto2{
+     color: $gris;
+     font-weight: 600;	
+    }
+}
+
+.box__articulo{
+	    grid-column-start: 2;
+}
+.box__articulo2{
+	    grid-column-start: 3;
 }
 
 .container--footer{
@@ -58,11 +108,154 @@
 	align-items: center;
 }
 
-.secundario__parrafo{
+/*.secundario__parrafo{
 	border:1px solid $amarillo;
 }
 
 .secundario__parrafo--extended{
 	@extend .secundario__parrafo;
 	border-width:3px ;
+}*/
+
+
+
+
+/*sobre mi y contacto*/
+
+.box--secundario{
+	background: #f4f4f4;
+	display:$contenedoris;
+	grid-template-rows: 200px 200px;
+    grid-template-columns: 40%;
+    grid-column-gap: 10px;
+    padding-left:$padding;
+    overflow: hidden;
+
+    img{
+    	width:$personas;
+    }
+    .box__texto, .box__texto2{
+     color: $gris;
+     font-weight: 600;	
+    }
+    .secundario__titulo{
+    	text-align: left;
+    	font-weight: 900;
+    }
+    a{
+    	text-decoration: none;
+    }
+}
+
+/*seccion Trabajos*/
+.contenedor--Trabajos{
+	background-image: url(../img/foto.jpg);
+	background-position: bottom right;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    padding: 50px 100px;
+    h1{
+    	text-align: left;
+    	font-weight: 900;
+    }
+}
+#contenedor__video {
+  width: 500vw;
+  height: 500vh;
+  object-fit: cover;
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*contacto*/
+.formularioDeContacto{
+	background: #f4f4f4;
+	h1{
+		font-weight: 600;
+	}
+
+}
+
+/*clientes*/
+
+#grid--aplicando{
+	grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    article{
+    	justify-self: center;
+    }
+    img{
+    	width: 500px;
+    }
+    img:hover {
+    transform: scale(1.1);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* responsive*/
+
+@media (max-width: 640px) {
+  .container {
+    text-align: center;
+  }
+
+  .container--nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin: 0.8em 0;
+  }
+}
+
+@media (max-width: 425px){
+	 .box--trabajos{
+	 	grid-template-rows: 1fr 1fr !important;
+	 	grid-template-columns: 100%!important;
+	 }
+	 .box__articulo{
+	 	grid-column-start: 1!important;
+	 }
+	 .box__articulo2{
+	 	grid-column-start: 1!important;
+	 	grid-row-start: 1!important;
+	 }
+	 h1{
+	 	font-size: 40px;
+	 }
+
+	 .box--secundario{
+	 	grid-template-rows: 250px 400px !important;
+	 	grid-template-columns: 100%!important;
+	 }
+
+	 .box--secundario img {
+    	width: 350px;
+	}
+	#grid--aplicando{
+		grid-row-start: 1!important;
+	}
+
 }
