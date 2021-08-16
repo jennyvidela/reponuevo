@@ -18,6 +18,11 @@ h1 {
   text-align: center;
   font-weight: 300; }
 
+h2 {
+  font-size: 60px;
+  text-align: left;
+  font-weight: 300; }
+
 p {
   font-size: 22px; }
 
@@ -93,24 +98,27 @@ nav a:focus {
 
 .box--trabajos {
   display: grid;
-  grid-template-rows: 200px 200px;
+  grid-template-rows: auto auto;
   grid-template-columns: 25% 25% 25% 25%;
   grid-column-gap: 10px;
   padding-left: 30px; }
   .box--trabajos img {
     width: 400px; }
-  .box--trabajos .box__texto, .box--trabajos .box__texto2 {
+  .box--trabajos .box__texto, .box--trabajos .box__texto2, .box--trabajos .box__texto3, .box--trabajos .box__texto4, .box--trabajos .box__texto5, .box--trabajos .box__texto6 {
     color: #4c4c4c;
     font-weight: 600; }
-
-.box__articulo {
-  grid-column-start: 2; }
+  .box--trabajos p {
+    font-weight: 300; }
 
 .box__articulo2 {
-  grid-column-start: 3; }
+  grid-column-start: 2; }
+
+.box__articulo2, .box__articulo, .box__articulo3, .box__articulo4, .box__articulo5, .box__articulo6 {
+  overflow: hidden; }
 
 .container--footer {
-  padding: 30px; }
+  padding: 30px;
+  bottom: 0px; }
   .container--footer ul li {
     display: inline;
     text-decoration: none; }
@@ -131,8 +139,8 @@ nav a:focus {
 .box--secundario {
   background: #f4f4f4;
   display: grid;
-  grid-template-rows: 200px 200px;
-  grid-template-columns: 40%;
+  grid-template-rows: auto;
+  grid-template-columns: 50%;
   grid-column-gap: 10px;
   padding-left: 30px;
   overflow: hidden; }
@@ -146,10 +154,38 @@ nav a:focus {
     font-weight: 900; }
   .box--secundario a {
     text-decoration: none; }
+  .box--secundario h1 {
+    text-align: left; }
+
+.box--secundario1 {
+  background: #fff;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 50%;
+  grid-column-gap: 10px;
+  padding-left: 30px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  overflow: hidden; }
+  .box--secundario1 img {
+    width: 600px; }
+  .box--secundario1 .box__texto, .box--secundario1 .box__texto2 {
+    color: #4c4c4c;
+    font-weight: 600; }
+  .box--secundario1 .secundario__titulo {
+    text-align: left;
+    font-weight: 900; }
+  .box--secundario1 ul li {
+    list-style: none;
+    padding: 5px; }
 
 /*seccion Trabajos*/
 .contenedor--Trabajos {
-  background-image: url(../img/foto.jpg);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 50%;
+  grid-column-gap: 10px;
+  background-image: url(../img/15.jpg);
   background-position: bottom right;
   background-attachment: fixed;
   background-size: cover;
@@ -161,27 +197,57 @@ nav a:focus {
     font-weight: 900; }
 
 #contenedor__video {
-  width: 500vw;
-  height: 500vh;
+  width: 98.2vw;
+  height: 100vh;
   object-fit: cover;
-  position: fixed;
+  position: absolute;
   left: 10px;
-  right: 10px;
   top: 10px;
-  bottom: 0;
   z-index: -1; }
 
 /*contacto*/
 .formularioDeContacto {
-  background: #f4f4f4; }
+  background: #f4f4f4;
+  padding: 50px 0px 150px 0px; }
   .formularioDeContacto h1 {
     font-weight: 600; }
+  .formularioDeContacto p, .formularioDeContacto span {
+    font-weight: 300; }
+  .formularioDeContacto input, .formularioDeContacto select, .formularioDeContacto textarea {
+    border-radius: 5px;
+    border: 1px solid #26597e; }
+
+.formularioDeContacto input:nth-child(1), .formularioDeContacto input:nth-child(3) {
+  width: 250px;
+  margin: 5px 0px; }
+
+form input:nth-last-child(2), form input:nth-last-child(1) {
+  background-color: #26597e;
+  color: #fff;
+  height: 30px;
+  margin-right: 15px; }
 
 /*clientes*/
+.contenedor--Trabajos1 {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 50%;
+  grid-column-gap: 10px;
+  background-image: url(../img/foto.jpg);
+  background-position: bottom right;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 500px;
+  padding: 50px 100px; }
+  .contenedor--Trabajos1 h1 {
+    text-align: left;
+    font-weight: 900; }
+
 #grid--aplicando {
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px;
-  padding: 10px; }
+  padding: 100px 10px; }
   #grid--aplicando article {
     justify-self: center; }
   #grid--aplicando img {
@@ -190,6 +256,36 @@ nav a:focus {
     transform: scale(1.1); }
 
 /* responsive*/
+@media (max-width: 768px) {
+  .box--trabajos {
+    grid-template-rows: 1fr 1fr !important;
+    grid-template-columns: 50%;
+    padding-left: 5px; }
+  nav li {
+    margin-left: 0.5em; }
+  h2 {
+    font-size: 50px; }
+  .box--secundario {
+    grid-template-rows: auto;
+    grid-template-columns: 50%; }
+  h1 {
+    font-size: 40px; }
+  p {
+    font-size: 16px; }
+  .contenedor--Trabajos1 {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 100%;
+    grid-column-gap: 10px;
+    background-image: url(../img/foto.jpg);
+    background-position: top left;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+    padding: 50px 40px; }
+  #grid--aplicando {
+    grid-template-columns: 100%; } }
+
 @media (max-width: 640px) {
   .container {
     text-align: center; }
@@ -203,7 +299,8 @@ nav a:focus {
 @media (max-width: 425px) {
   .box--trabajos {
     grid-template-rows: 1fr 1fr !important;
-    grid-template-columns: 100% !important; }
+    grid-template-columns: 100% !important;
+    padding-left: 10px; }
   .box__articulo {
     grid-column-start: 1 !important; }
   .box__articulo2 {
