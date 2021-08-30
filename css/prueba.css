@@ -18,7 +18,7 @@ h1 {
   text-align: center;
   font-weight: 300; }
 
-h2 {
+h2, h2 a {
   font-size: 60px;
   text-align: left;
   font-weight: 300; }
@@ -50,7 +50,9 @@ p {
   display: grid; }
 
 body {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  margin: 0px; }
 
 /*comienzan estilos del menu*/
 header {
@@ -70,6 +72,9 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center; }
+  .container--nav h2 a {
+    text-decoration: none;
+    color: #4c4c4c; }
 
 nav li {
   margin-left: 2em; }
@@ -80,6 +85,17 @@ nav a {
 nav a:hover,
 nav a:focus {
   font-weight: 900; }
+
+#btn-menu {
+  display: none; }
+
+header label {
+  display: none; }
+
+header label:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.3);
+  height: 24px; }
 
 /*finalizan estilos del menu*/
 .contenedor--informacion {
@@ -197,12 +213,12 @@ nav a:focus {
     font-weight: 900; }
 
 #contenedor__video {
-  width: 98.2vw;
-  height: 100vh;
   object-fit: cover;
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1; }
 
 /*contacto*/
@@ -284,7 +300,24 @@ form input:nth-last-child(2), form input:nth-last-child(1) {
     height: 300px;
     padding: 50px 40px; }
   #grid--aplicando {
-    grid-template-columns: 100%; } }
+    grid-template-columns: 100%; }
+  .container--nav {
+    flex-direction: column;
+    align-items: flex-start; }
+  header label {
+    display: block; }
+  nav {
+    margin-left: -170%;
+    display: none;
+    width: 100%;
+    grid-gap: 20px; }
+    nav ul {
+      flex-direction: column !important;
+      align-items: center;
+      grid-gap: 20px; }
+  #btn-menu:checked ~ nav {
+    margin: 0;
+    display: inline; } }
 
 @media (max-width: 640px) {
   .container {

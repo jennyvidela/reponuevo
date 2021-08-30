@@ -5,6 +5,8 @@
 
 body{
 	font-family: 'Roboto', sans-serif;
+  width: 100%;
+  margin: 0px;
 }
 	/*comienzan estilos del menu*/	
 
@@ -28,22 +30,45 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  h2 a{
+    text-decoration: none;
+    color: $gris;
+  }
 }
 
-nav li {
-	margin-left: 2em;
-}
 
-nav a {
+nav{
+  li {
+  margin-left: 2em;
+  }
+  a {
   text-decoration: none;
-}
-
-nav a:hover,
-nav a:focus {
+  }
+  a:hover,
+  a:focus {
   font-weight: 900;
+  }
 }
 
+ 
 
+#btn-menu{
+  display: none;
+}
+
+header{
+
+  label{
+    display: none;
+  }
+  label:hover{
+  cursor: pointer;
+  background: rgba(0,0,0,0.3);
+  height: 24px;
+  }
+}
+
+ 
 
 
 /*finalizan estilos del menu*/
@@ -63,7 +88,6 @@ nav a:focus {
     .contenedor__articulo{
 		h1{
 		color: white;
-
 		}
 	}
 	.contenedor__parrafo{
@@ -204,12 +228,13 @@ nav a:focus {
     }
 }
 #contenedor__video {
-  width: 98.2vw;
-  height: 100vh;
+  
   object-fit: cover;
-  position: absolute;
-  left: 10px;
-  top: 10px;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 
@@ -324,6 +349,34 @@ form input:nth-last-child(2), form input:nth-last-child(1){
     grid-template-columns: 100%;
   }
 
+  .container--nav{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header label{
+    display: block;
+  }
+
+
+
+  nav{
+    margin-left: -170%;
+    display: none;
+    width: 100%;
+    grid-gap: 20px;
+      ul{
+      flex-direction: column!important;
+      align-items: center;
+      grid-gap: 20px;
+    }
+  }
+
+  #btn-menu:checked ~ nav{
+    margin:0;
+    display: inline;
+  }
+
 
 }
 
@@ -375,3 +428,4 @@ form input:nth-last-child(2), form input:nth-last-child(1){
 	}
 
 }
+
